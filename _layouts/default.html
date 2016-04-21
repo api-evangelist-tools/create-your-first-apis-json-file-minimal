@@ -8,23 +8,7 @@
     <header class="masthead">
       <div class="masthead-inner" align="center">
 
-        <!-- Masthead Title -->
-        <h2><a href="{{ site.masthead_link }}" style="font-size: {{ site.masthead_font_size }}%;">{{ site.masthead_title }}</a></h2>
-
-        <!-- Feature -->
-        <a href="{{ site.feature_link }}" target="_blank" id="feature_project_link"><img id="feature_project_image" src="{{ site.feature_image_source }}" width="{{ site.feature_image_width }}%" style="border: 1px solid #FFF;" title="{{ site.feature_title }}" /></a>
-
-        <div class="colophon">
-          <ul class="colophon-links">
-            {% for nav in site.navigation %}<li style="padding-top:{{ nav.padding }}px"><a href="{{ nav.link1 }}" style="font-size: {{ nav.size1 }}%;">{% if nav.decorate == 1 %} <span style="font-size: {{ nav.size1 }}">&#8668;</span>{% endif %}{{ nav.label1 }}</a>{% if nav.extend == 1 %} <span style="font-size: {{ nav.size2 }}%;">(<a href="{{ nav.link2 }}">{{ nav.label2 }}</a>)</span>{% endif %}</li>{% endfor %}
-          </ul>
-        </div>
-
-        <!-- Sponsorship -->
-        <script id="parterListingTemplate" type="text/template">{% raw  %}<a href="{{url}}" target="_blank" title="{{title}}"><img src="{{logo}}" width="{{width}}" style="padding: 2px;" /></a>{% endraw %}</script>
-        <div id="partnerListingContainer" align="center" style="background-color:#FFF; margin-top: {{ site.sponsors_margin_top }}px; padding: 15px; width: 50%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 3px solid #FFFFFF; margin-bottom: 2px;"></div>
-        <!-- Sponsorship -->
-
+      
       </div>
     </header>
 
