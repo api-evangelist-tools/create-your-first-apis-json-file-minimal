@@ -147,8 +147,8 @@ function BuildAPIsJSON()
     // Publish to Viewer
     $viewer = JSON.stringify($MasterAPISJSON, null, 4);
     document.getElementById("jsonViewerDetails").value = $viewer;
-    document.getElementById("jsonViewerDetails").style.display == '';
-    
+    document.getElementById("jsonViewerDetails").style.display = '';
+
     // Show the Modal
     $('#apisJSONModal').modal('show');
     }
