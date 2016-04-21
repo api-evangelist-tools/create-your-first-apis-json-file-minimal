@@ -160,7 +160,7 @@ function BuildAPIsJSON()
     // Publish to Viewer
     $viewer = JSON.stringify($MasterAPISJSON, null, 4);
     document.getElementById("jsonViewerDetails").value = $viewer;
-    console.log(viewer);
+    console.log($viewer);
     //$('#jsonEditorTable').append($viewer);
     // Show the Modal
     $('#apisJSONModal').modal('show');
