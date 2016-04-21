@@ -33,9 +33,9 @@ title: Create Your First APIs.json File
       <div class="modal-footer">
         <button type="button" class="btn btn-default center-block" data-dismiss="modal">Close</button>
       </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    </div>
+  </div>
+</div>
 
 <form method="get" action="add.php">
 <h4>Minimum Information Needed</h4>
@@ -47,128 +47,5 @@ title: Create Your First APIs.json File
 <button onclick="BuildAPIsJSON();" type="submit" class="btn btn-default" name="add-organization" value="1">Generate My APIs.json</button>
 <br />
 
-<script type="text/jscript">
-
-//
-// This is meant to be a very verbose, hackable script that you can change and make yours.
-// Do what you need to make it create exactly the APIs.json file you will need for your platform.
-//
-
-function BuildAPIsJSON()
-    {
-    $MasterAPISJSON = {};
-
-    $apisJSONName = "Minimum Viable APIs.json File";
-    $apisJSONDescription = "I did not actually want to create an APIs.json index for submission to search engine, I am only looking to create it so I can use an APIs.json driven micro tool."
-    $apisJSONImage = "https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png";
-    $apisJSONTags = "APIs.json, Mimium";
-    $apisJSONTagArray = $apisJSONTags.split(',');
-    $apisJSONUrl = "http://apievangelist.com"
-    $apisJSONAPIName = "Minimum Viable APIs.json File";
-    $apisJSONAPIDescription = "I did not actually want to create an APIs.json index for submission to search engine, I am only looking to create it so I can use an APIs.json driven micro tool."
-    $apisJSONAPIImage = "https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png";
-    $apisJSONAPITags = "APIs.json, Mimium";
-    $apisJSONAPITagArray = $apisJSONAPITags.split(',');
-    $apisJSONAPIOpenAPISpecURL = document.getElementById("api-openapi-spec-url").value;
-    $apisJSONAPIPortalURL = "http://create.your.first.apis.json.file.minimal.tools.apievangelist.com";
-    $apisJSONContactName = "API Evangelist";
-    $apisJSONContactTwitter = "apievangelist";
-    $apisJSONContactEmail = "info@apievangelist.com";
-
-    $MasterAPISJSON['name'] = $apisJSONName;
-
-    // description
-    if($apisJSONDescription!='')
-        {
-        $MasterAPISJSON['description'] = $apisJSONDescription;
-        }
-
-    // image
-    if($apisJSONImage!='')
-        {
-        $MasterAPISJSON['image'] = $apisJSONImage;
-        }
-
-    // tags
-    if($apisJSONTags!='')
-        {
-        $MasterAPISJSON['tags'] = {};
-        $MasterAPISJSON['tags'] = $apisJSONTagArray;
-        }
-
-    $MasterAPISJSON['url'] = $apisJSONUrl;
-
-    var date = new Date();
-    var day = date.getDate();
-    var monthIndex = date.getMonth();
-    var year = date.getFullYear();
-
-    // Set the dates
-    if(monthIndex<10){ monthIndex = '0' + monthIndex; }
-    $created_date = year  + '-' + monthIndex + '-' + day;
-    $MasterAPISJSON['created'] = $created_date;
-    $MasterAPISJSON['modified'] = $created_date;
-
-    $MasterAPISJSON['specificationVersion'] = '0.14';
-
-    $MasterAPISJSON['apis'] = [];
-
-    // Build a contact array
-    $ContactArray = {};
-    $ContactArray['FN'] = $apisJSONAPIName;
-    $ContactArray['X-twitter'] = $apisJSONAPIName;
-    $ContactArray['email'] = $apisJSONAPIName;
-
-    $APIArray = {};
-    $APIArray['name'] = $apisJSONAPIName;
-
-    // API description
-    if($apisJSONAPIDescription!='')
-        {
-        $APIArray['description'] = $apisJSONAPIDescription;
-        }
-
-    $APIArray['image'] = $apisJSONAPIImage;
-    $APIArray['humanURL'] = $apisJSONAPIPortalURL;
-
-    // API Tags
-    if($apisJSONAPITagArray!='')
-        {
-        $APIArray['tags'] = $apisJSONAPITagArray;
-        }
-
-    $APIArray['properties'] = [];
-
-    // OpenAPI Spec
-    if($apisJSONAPIOpenAPISpecURL!='')
-        {
-        $APIPropertyArray = {};
-        $APIPropertyArray['type'] = "X-openapi-spec";
-        $APIPropertyArray['url'] = $apisJSONAPIOpenAPISpecURL;
-        $APIArray['properties'].push($APIPropertyArray);
-        }
-
-    // API Tags
-    if($apisJSONAPITags!='')
-        {
-        $APIArray['tags'] = {};
-        $APIArray['tags'] = $apisJSONAPITagArray;
-        }
-
-    $APIArray['contact'] = $ContactArray;
-    $MasterAPISJSON['apis'].push($APIArray);
-    $MasterAPISJSON['include'] = [];
-    $MasterAPISJSON['maintainers'] =  $ContactArray;
-    $MasterAPISJSON['url'] = $apisJSONUrl;
-
-    // Publish to Viewer
-    $viewer = JSON.stringify($MasterAPISJSON, null, 4);
-    document.getElementById("jsonViewerDetails").value = $viewer;
-
-    // Show the Modal
-    $('#apisJSONModal').modal('show');
-    }
-
-</script>
 <p><br /></p>
 <p>This application runs as a micro tool, which operates 100% client-side, running completely on a Jekyll website, hosted using Github, and Github pages. Visit the about page for more information, if you'd like to support this work feel free to invest and done. If you have any issues, or would like to leave a comment, you can do so via <a href="https://github.com/api-evangelist-tools/create-your-first-apis-json-file/issues">the project's Github repository</a>.</p>
