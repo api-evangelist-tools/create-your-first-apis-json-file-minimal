@@ -146,8 +146,8 @@ function BuildAPIsJSON()
 
     // Publish to Viewer
     $viewer = JSON.stringify($MasterAPISJSON, null, 4);
-    //document.getElementById("jsonViewerDetails").value = $viewer;
-    $('#jsonEditorTable').append($viewer);
+    document.getElementById("jsonViewerDetails").value = $viewer;
+    //$('#jsonEditorTable').append($viewer);
     // Show the Modal
     $('#apisJSONModal').modal('show');
     }
@@ -163,7 +163,7 @@ function BuildAPIsJSON()
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="gridSystemModalLabel">Here Is Your APIs.json File</h4>
       </div>
-      <div class="modal-body" id="jsonViewerDetails"></div>
+      <div class="modal-body" id="jsonViewerDetails"><textarea id="jsonViewerDetails"></textarea></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default center-block" data-dismiss="modal">Close</button>
       </div>
