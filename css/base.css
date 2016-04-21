@@ -249,18 +249,10 @@ a:focus {
   }
 }
 
-
-/* Container
- *
- * Align the contents of the site above the proper threshold with some margin-fu
- * with a 25%-wide `.masthead`.
- */
-
 .content {
   padding: 7px 5px;
 }
 
-/* Center container in available real estate */
 @media (min-width: 990px) {
   .content {
     padding: 10px 0;
